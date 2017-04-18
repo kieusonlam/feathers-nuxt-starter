@@ -2,7 +2,7 @@
     <div>
         <h1>About</h1>
         <p>This was rendered by the {{ renderer }}</p>
-        <nuxt-link to="/">Home</nuxt-link>
+        <div>{{ total }}</div>
     </div>
 </template>
 
@@ -12,6 +12,9 @@ export default {
         return {
             renderer: req ? 'server' : 'client',
         }
+    },
+    computed: {
+        total () { return this.$store.state.counter.total },
     }
 }
 </script>
